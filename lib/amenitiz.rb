@@ -5,5 +5,5 @@ require_relative "amenitiz/services"
 
 module Amenitiz
   class MissingDefinition < StandardError; end
-  # Your code goes here...
+  class NotSupportedValue < StandardError; end
 end
