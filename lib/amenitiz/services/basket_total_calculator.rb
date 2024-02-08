@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-# TODO: These should have been loaded automatically
-require_relative 'two_for_one'
-require_relative 'bulk_with_discount'
-require_relative 'bulk_with_new_price'
+require_relative 'rules'
 
 module Amenitiz
   # This class is responsible for receiving a list of products, and based on
@@ -15,9 +12,9 @@ module Amenitiz
 
     # TODO: This should instead come direrectly from database. Also, yearning for #hash_with_indifferent_access
     PRICING_RULES = {
-      GR1: Amenitiz::TwoForOne.new(base_price: 3.11),
-      SR1: Amenitiz::BulkWithNewPrice.new(base_price: 5.00, new_price: 4.50, threshold: 3),
-      CF1: Amenitiz::BulkWithDiscount.new(base_price: 11.23, discount: 2 / 3.to_f, threshold: 3)
+      GR1: Amenitiz::Rules::TwoForOne.new(base_price: 3.11),
+      SR1: Amenitiz::Rules::BulkWithNewPrice.new(base_price: 5.00, new_price: 4.50, threshold: 3),
+      CF1: Amenitiz::Rules::BulkWithDiscount.new(base_price: 11.23, discount: 2 / 3.to_f, threshold: 3)
     }.freeze
 
     def initialize(product_list: [])

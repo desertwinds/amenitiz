@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Amenitiz::BaseRule do
+RSpec.describe Amenitiz::Rules::BaseRule do
   describe '#new' do
     it 'requires a base_price' do
       expect { described_class.new }.to raise_error

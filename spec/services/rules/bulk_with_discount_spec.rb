@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Amenitiz::BulkWithDiscount do
+RSpec.describe Amenitiz::Rules::BulkWithDiscount do
   describe '#initialize' do
     it 'requires a discount and threshold' do
       expect { described_class.new(base_price: 5) }.to raise_error

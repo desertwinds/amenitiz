@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Amenitiz::TwoForOne do
+RSpec.describe Amenitiz::Rules::TwoForOne do
   describe '#calculate' do
     subject { described_class.new(base_price: 5) }
 
