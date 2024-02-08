@@ -1,0 +1,4 @@
+Metrics/BlockLength:
+  Exclude:
+    - amenitiz.gemspec
+    - spec/**/*_spec.rb

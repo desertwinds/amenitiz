@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 module Amenitiz
+  # Rule for calculating final price when we want to change the base price after having
+  # a certain threshold of items.
   class BulkWithNewPrice < BaseRule
     attr_accessor :new_price, :threshold
 
@@ -10,10 +14,10 @@ module Amenitiz
     end
 
     def calculate(product_quantity)
-      raise NotSupportedValue.new("Quantity needs to be >= 0") if product_quantity < 0
+      raise NotSupportedValue, 'Quantity needs to be >= 0' if product_quantity.negative?
 
       return product_quantity * new_price if product_quantity >= threshold
-        
+
       product_quantity * base_price
     end
   end

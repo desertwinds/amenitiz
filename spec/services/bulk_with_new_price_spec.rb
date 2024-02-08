@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe Amenitiz::BulkWithNewPrice do
   describe '#initialize' do
-    it "requires a new_price and threshold" do
+    it 'requires a new_price and threshold' do
       expect { described_class.new(base_price: 5) }.to raise_error
       expect { described_class.new(base_price: 5, new_price: 3, threshold: 3) }.to_not raise_error
     end
