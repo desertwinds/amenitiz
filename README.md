@@ -9,7 +9,7 @@ In case you don't have the correct version, running `rbenv install` or `rvm inst
 
 In order to have all the necessary gems for this to be ran locally, please do
 
-`bundle install`
+`./bin/setup` or if you prefer directly `bundle install`
 
 ## Usage
 
@@ -21,9 +21,9 @@ In order to run rubocop
 
 `bundle exec rake rubocop`
 
-You can run `bin/console` for an interactive prompt that will allow you to experiment.
+You can run `./bin/console` for an interactive prompt that will allow you to experiment.
 
-To start the CLI that will request you with a comma separated list of products, run `bin/amenitiz`
+To start the CLI that will request you with a comma separated list of products, run `./bin/amenitiz`
 
 ## Testing
 
